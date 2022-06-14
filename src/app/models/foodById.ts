@@ -1,0 +1,26 @@
+export interface food {
+    id: number,
+    aggregateLikes: number,
+    analyzedInstructions: [],
+    cheap: boolean,
+    cookingMinutes: number,
+    cuisines: [],
+    dairyFree: boolean,
+    diets: [],
+    dishTypes: [],
+    extendedIngredients: [],
+    gaps: string,
+    glutenFree: boolean,
+    healthScore: number,
+    image: string,
+    imageType: string,
+    instructions: string,
+    lowFodmap: boolean,
+    occasions: [],
+    openLicense: number,
+    preparationMinutes: number,
+    pricePerServing: number,
+    readyInMinutes: number,
+    
+    
+}

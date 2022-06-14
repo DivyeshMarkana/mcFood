@@ -1,0 +1,17 @@
+.uk-navbar-container {
+    background: #ff562c;
+    padding: 1rem 7%;
+
+    span,
+    a {
+        color: #fff;
+    }
+
+    .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+}
+

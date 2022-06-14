@@ -1,0 +1,140 @@
+.example-card {
+  max-width: 400px;
+}
+
+.container {
+  display              : grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap                  : 20px;
+  min-width            : 80vw;
+  width                : 80vw;
+  margin               : 2rem auto;
+
+  mat-card {
+    // border: 2px solid black;
+    padding         : 0;
+    margin          : 0;
+    aspect-ratio    : 2/ 3;
+    display         : grid;
+    background-color: #fff;
+    color           : #000;
+
+    &>* {
+      grid-column: 1/ 2;
+      grid-column: 1/ 2;
+
+    }
+
+    img {
+      width        : 100%;
+      aspect-ratio : 1 / 1;
+      object-fit   : cover;
+      border-radius: 8px 8px 0 0;
+    }
+
+    mat-card-content {
+      aspect-ratio: 2 / 1;
+      position    : relative;
+      background-color: #ff38381a;
+
+      h4 {
+        color: #ff3636;
+        margin: .3rem 0 .3rem .5rem;
+        font: 14px !important;
+      }
+      
+      .cook__time {
+        display  : flex;
+        position : absolute;
+        bottom   : 5px;
+        right    : 5px;
+        font-size: 12px;
+
+        span {
+          font-size: 17px;
+        }
+      }
+
+      .food__type {
+        display        : flex;
+        justify-content: space-around;
+        max-width      : 50px;
+        align-items    : center;
+      }
+
+      .price {
+        position : absolute;
+        bottom   : 5px;
+        left     : 10px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.food__symbol {
+  width        : 10px;
+  height       : 10px;
+  border       : 2px solid gray;
+  border-radius: 4px;
+  position     : relative;
+}
+
+.food__symbol::after {
+  content         : '';
+  width           : 6.5px;
+  height          : 6.5px;
+  background-color: gray;
+  border-radius   : 50%;
+  position        : absolute;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
+}
+
+
+
+.disable {
+  filter: grayscale(0);
+}
+
+
+.veg {
+  width        : 10px;
+  height       : 10px;
+  border       : 2px solid green;
+  border-radius: 4px;
+  position     : relative;
+}
+
+.veg::after {
+  content         : '';
+  width           : 6.5px;
+  height          : 6.5px;
+  background-color: green;
+  border-radius   : 50%;
+  position        : absolute;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
+}
+
+.nonveg {
+  width        : 10px;
+  height       : 10px;
+  border       : 2px solid red;
+  border-radius: 4px;
+  position     : relative;
+}
+
+.nonveg::after {
+  content         : '';
+  width           : 6.5px;
+  height          : 6.5px;
+  background-color: #ff3636;
+  border-radius   : 50%;
+  position        : absolute;
+  top             : 50%;
+  left            : 50%;
+  transform       : translate(-50%, -50%);
+}

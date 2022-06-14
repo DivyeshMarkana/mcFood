@@ -1,0 +1,66 @@
+<div class="container">
+  <mat-card class="example-card" *ngFor="let food of foodList" [routerLink]="['/food', food.id]">
+    <img [src]="food.image" alt="food image not found">
+    <mat-card-content>
+      <h4 matTooltip="{{food.title}}">{{food.title | trimName}}</h4>
+
+      <div class="cuisines" *ngFor="let cuisine of food.dishTypes">
+        <!-- {{cuisine}} -->
+      </div>
+
+      <div class="food__type">
+          <div class=" food__symbol" [class.veg]="food.vegetarian"></div>
+        
+          <div class=" food__symbol" [class.nonveg]="!food.vegetarian"></div>
+        
+      </div>
+
+      <div class="price">
+        {{food.pricePerServing | currency: 'INR'}}
+      </div>
+
+      <div class="cook__time">
+        <span class="material-icons">
+          schedule
+        </span>
+        {{food.readyInMinutes + 'minutes'}}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+<!-- <div class="container">
+  <mat-card class="example-card">
+    <img src="https://images.unsplash.com/photo-1500754088824-ce0582cfe45f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyfHx8fHx8MTY1NDUxMzcyMA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=200" alt="food image not found">
+    <mat-card-content>
+      <h4>Food name</h4>
+
+      <div class="cuisines">
+        
+      </div>
+
+      <div class="food__type">
+        
+
+          <div class=" food__symbol veg" ></div>
+          
+        
+          <div class=" food__symbol nonveg" ></div>
+          
+        
+      </div>
+
+      <div class="price">
+        344
+      </div>
+
+      <div class="cook__time">
+        <span class="material-icons">
+          schedule
+        </span>
+        23minues
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> -->
