@@ -32,5 +32,3 @@ export class FoodApiService {
     return this.http.get<Food[]>(requestUrl)
   }
 }
-
-// https://api.spoonacular.com/food/ingredients/9152/information?apiKey=4802f55cf83a4dccb9457e3a20eb5c88

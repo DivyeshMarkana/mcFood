@@ -12,6 +12,7 @@ import { MaterialModule } from './material/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TrimNamePipe } from './pipes/trim-name.pipe';
 import { FoodDetailComponent } from './components/food-detail/food-detail.component';
+import { IngredientDialogComponent } from './components/ingredient-dialog/ingredient-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FoodDetailComponent } from './components/food-detail/food-detail.compon
     FoodDashboardComponent,
     TrimNamePipe,
     FoodDetailComponent,
+    IngredientDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,13 +20,13 @@ export class FoodDetailComponent implements OnInit {
     const id = this.route.snapshot.params['id']
 
     this.foodApi.getRecipeById(id).subscribe((response) => {
-      // console.log(response);
+      console.log(response);
       this.food = response
 
       // * Similar recipe by recipe id
 
       this.foodApi.getSimilarRecipe(id).subscribe((response) => {
-        console.log(response);
+        // console.log(response);
         this.similar = response
         for (const iterator of this.similar) {
           // console.log(iterator.title);
