@@ -10,6 +10,7 @@ import { FoodApiService } from 'src/app/services/food-api.service';
 export class FoodDashboardComponent implements OnInit {
 
   foodList: Food[] = []
+  searchKey: string = ''
 
   constructor(private foodService: FoodApiService) { }
 
@@ -17,7 +18,12 @@ export class FoodDashboardComponent implements OnInit {
 
     this.foodService.getRandomRecipe().subscribe((response) => {
       this.foodList = response.recipes
-      // console.log(this.foodList);
+      // this.searchKey = response.recipes
+      console.log(this.foodList);
     })
+  }
+
+  foodID(id: number){
+    alert(id)
   }
 }

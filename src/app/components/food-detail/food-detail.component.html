@@ -1,38 +1,40 @@
 <div class="container">
 
-    <h1> {{food.title | titlecase}} </h1>
-    <div class="food__content">
-        <div class="food__img">
-            <!-- <img src="https://source.unsplash.com/random/500x500/?food" alt="food image"> -->
-            <!-- <img src=" 'https://spoonacular.com/recipeImages/' + food.id + '556x370.jpg' " alt="food image"> -->
-            <img [src]="food.image" alt="image not found">
-        </div>
+    <ng-container *ngIf="food">
+        <h1> {{food.title}} </h1>
+        <div class="food__content">
+            <div class="food__img">
+                <!-- <img src="https://source.unsplash.com/random/500x500/?food" alt="food image"> -->
+                <!-- <img src=" 'https://spoonacular.com/recipeImages/' + food.id + '556x370.jpg' " alt="food image"> -->
+                <img [src]="food.image" alt="image not found">
+            </div>
 
-        <div class="ingredients">
-            <div class="ingredient" *ngFor="let ingredient of food.extendedIngredients">
+            <div class="ingredients">
+                <div class="ingredient" *ngFor="let ingredient of food.extendedIngredients"
+                    (click)="getIngredientDetail(ingredient)">
 
-                <ng-container *ngIf="ingredient.image !== null">
-                    <div class="ingredient__img" (click)="getIngredientDetail(ingredient.id)">
-                        <img [src]="'https://spoonacular.com/cdn/ingredients_100x100/' + ingredient.image"
-                            alt="image not found">
+                    <ng-container *ngIf="ingredient.image !== null">
+                        <div class="ingredient__img">
+                            <img [src]="'https://spoonacular.com/cdn/ingredients_100x100/' + ingredient.image"
+                                alt="image not found">
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="ingredient.image === null">
+                        <div class="ingredient__img">
+                            <img src="assets/image not found.jpg" alt="image not found">
+                        </div>
+                    </ng-container>
+
+                    <div class="ingredient__name">
+                        {{ingredient.name}}
                     </div>
-                </ng-container>
-
-                <ng-container *ngIf="ingredient.image === null">
-                    <div class="ingredient__img" (click)="getIngredientDetail(ingredient.id)">
-                        <img src="../../../assets/image not found.jpg"
-                            alt="image not found">
-                    </div>
-                </ng-container>
-
-                <div class="ingredient__name">
-                    {{ingredient.name}}
                 </div>
             </div>
         </div>
-    </div>
-    <div class="discription">
-        <h2>Discription</h2>
-        <p>{{food.instructions}}</p>
-    </div>
+        <div class="discription">
+            <h2>Discription</h2>
+            <p>{{food.instructions}}</p>
+        </div>
+    </ng-container>
 </div>

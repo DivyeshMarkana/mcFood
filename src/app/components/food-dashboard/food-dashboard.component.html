@@ -1,6 +1,14 @@
 <div class="container">
-  <mat-card class="example-card" *ngFor="let food of foodList" [routerLink]="['/food', food.id]">
-    <img [src]="food.image" alt="food image not found">
+  <mat-card class="example-card" *ngFor="let food of foodList | foodFilter: searchKey" [routerLink]="['/food', food.id]">
+
+    <ng-container *ngIf="food.image !== null">
+      <img [src]="food.image" alt="food image not found">
+    </ng-container>
+
+    <ng-container *ngIf="!food.image">
+      <img src="../../../assets/image not found.jpg" alt="food image not found">
+    </ng-container>
+    
     <mat-card-content>
       <h4 matTooltip="{{food.title}}">{{food.title | trimName}}</h4>
 
